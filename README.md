@@ -60,5 +60,16 @@ For subjective tasks such as hate detection, where people of different socio-cul
 
 # Cite
 ```sh
-To be appear in EMNLP (main) conference in Miami, USA (Dec 2024)
+@inproceedings{masud-etal-2024-hate,
+    title = "Hate Personified: Investigating the role of {LLM}s in content moderation",
+    author = "Masud, Sarah  and Singh, Sahajpreet  and Hangya, Viktor  and Fraser, Alexander  and Chakraborty, Tanmoy",
+    editor = "Al-Onaizan, Yaser  and Bansal, Mohit  and Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.886",
+    pages = "15847--15863"
+}
 ```
