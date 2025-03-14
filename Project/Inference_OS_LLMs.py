@@ -23,8 +23,8 @@ for m in model_names:
     print(m," loaded for inference")
     for f in files:
         df = pd.read_excel(f+'.xlsx')
-        #df = df[df.columns[:2]] # For RQ1, ML
-        #df = df[df.columns[:8]] # For RQ2, RQ3
+        #df = df[df.columns[:2]] # For RQ_NC, ML
+        #df = df[df.columns[:8]] # For RQ_GC, RQ_PC
         
         anno = []
         bs = 8
@@ -36,8 +36,7 @@ for m in model_names:
                         # only for mistral, zephyr, llama3
                         prompt.append(df.text.iloc[j]+" Answer in one word only.")
                     else:
-                        prompt.append(df.text.iloc[j])
-                        
+                        prompt.append(df.text.iloc[j])        
                 except:
                     break
             
@@ -48,8 +47,8 @@ for m in model_names:
 
             # Except FlanT5 models: outputs= input + new generated tokens
             if(m[0]!='f'):
-                for i in range(len(outputs)):
-                    outputs[i] = outputs[i][len(prompt[i]):]
+                for j in range(len(outputs)):
+                    outputs[j] = outputs[j][len(prompt[j]):]
             
             anno += outputs
             del inputs, outputs

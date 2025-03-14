@@ -29,7 +29,8 @@ df = pd.read_excel(f)
 """The below code should be commented only when reproducing the results
 This was written to take the dataset (prompt injected) from respective files of open-source models
 So this drops the aditional outputs of open-source models and keep only the text, gold labels & ChatGPT's output"""
-# df = df[df.columns[:8]] # choose this based on the dataset
+# df = df[df.columns[:8]] # choose this based on the dataset (CREHate)
+# df = df[df.columns[:2]] # choose this based on the dataset (HateXplain)
 # df = df.sample(n=500, random_state=42).reset_index(drop=True)
 
 dft = df.text
@@ -38,7 +39,8 @@ anno = []
 for i in tqdm(range(df.shape[0])):
     # if file is in */ChatGPT/ folder (prompt in English language)
     prompt = dft.iloc[i]+" Answer in one word only."
-    # if file is in ML/ChatGPT_SL/ folder (prompt in same language)
+    # if file is in ML/ChatGPT_SL/ folder (prompt in same language) beacause in case of same language
+    # "Answer in one word only." is already in the translated prompt
     prompt = dft.iloc[i]
 
     try:
